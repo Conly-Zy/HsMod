@@ -29,3 +29,10 @@ jobs:
     # Build the project
     - name: Build HsMod
       run: dotnet build --configuration Release --no-restore
+
+    - name: Upload HsMod to artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: HsMod.dll
+        path: HsMod/Release/HsMod.dll
+          compression-level: 9
